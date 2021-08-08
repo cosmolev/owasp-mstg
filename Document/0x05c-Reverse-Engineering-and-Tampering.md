@@ -122,7 +122,7 @@ extends AppCompatActivity {
 }
 ```
 
-Note the declaration of `public native String stringFromJNI` at the bottom. The keyword "native" tells the Java compiler that this method is implemented in a native language. The corresponding function is resolved during runtime, but only if a native library that exports a global symbol with the expected signature is loaded (signatures comprise a package name, class name, and method name). In this example, this requirement is satisfied by the following C or C++ function:
+A slightly different result can be achieved by uploading the HelloWorld-JNI.apk to the [online decompiler](https://www.decompiler.com/jar/ca86867382ed4df6a585286e8c95e5fb/HelloWord-JNI.apk/sources/sg/vantagepoint/helloworldjni/MainActivity.java "online decompiler"). Note the declaration of `public native String stringFromJNI` at the bottom. The keyword "native" tells the Java compiler that this method is implemented in a native language. The corresponding function is resolved during runtime, but only if a native library that exports a global symbol with the expected signature is loaded (signatures comprise a package name, class name, and method name). In this example, this requirement is satisfied by the following C or C++ function:
 
 ```c
 JNIEXPORT jstring JNICALL Java_sg_vantagepoint_helloworld_MainActivity_stringFromJNI(JNIEnv *env, jobject)
